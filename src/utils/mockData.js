@@ -1,6 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
 resObj = [
   {
     info: {
@@ -1588,64 +1585,4 @@ resObj = [
   },
 ];
 
-const HeaderComponent = () => (
-  <div className="header">
-    <div className="logo">
-      <img
-        className="logo"
-        src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/food-delivery-logo-design-template-5997896464b733d7a04807aebd739df2_screen.jpg?ts=1628241737"
-      ></img>
-    </div>
-    <div className="nav-items">
-      <ul>
-        <li>Home</li>
-        <li>About Us</li>
-        <li>Contact Us</li>
-        <li>Cart</li>
-      </ul>
-    </div>
-  </div>
-);
-
-const RestoCards = (props) => {
-  const { resData } = props;
-  const { name, cuisines, avgRating, costForTwo, cloudinaryImageId } =
-    resData.info;
-  const { deliveryTime } = resData.info.sla;
-
-  return (
-    <div className="resto-card">
-      <img
-        className="resto-logo"
-        src={
-          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          cloudinaryImageId
-        }
-      ></img>
-      <h3>{name}</h3>
-      <h4>{cuisines.join(',')}</h4>
-      <h4>{avgRating+" Ratings"}</h4>
-      <h4>{costForTwo}</h4>
-      <h4>{deliveryTime + "mins"}</h4>
-    </div>
-  );
-};
-
-const BodyComponent = () => (
-  <div className="body">
-    <div className="serach">serach</div>
-    <div className="resto-containers">
-     {resObj.map(res_info=><RestoCards key={res_info.info.id} resData={res_info}></RestoCards>)}
-    </div>
-  </div>
-);
-
-const AppLayout = () => (
-  <div className="app">
-    <HeaderComponent></HeaderComponent>
-    <BodyComponent></BodyComponent>
-  </div>
-);
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+export default resObj;

@@ -26,7 +26,7 @@ normal javascript utlity function which is given us by react.
  2] useEffect()
 
 
- using react hook function to change normal js variable to super powerful react variable.using react state hook to rerender thereact component.
+ using react hook function to change normal js variable to super powerful react variable.using react state hook to rerender the react component.
 
  how to use that
  ---------------
@@ -40,3 +40,18 @@ how it wiil be works?
   new virtual dom . Virtual Dom  is nothing but actual representation of the actual Dom,it is an javascript object.
   React is very efficient in rerendering the dom manipulations.It keeps  a track on state variable and sunc between
   data layer and the ui layer.
+
+
+Seperation of Concerns
+------------------------
+  Each and small thing have a different projects ,this is know as microservice architecture.
+  
+Monolithic architecture
+---------------------------
+  Everything (ui,api,dbconnections,jsp,sms,sockets...) under a single project is know as Monolithic
+  architecture.
+
+optional chaining
+-------------------
+  if anyone can access object property or function is undefined finally its evaluates to undefined 
+  it does not throw error using optional chaining.

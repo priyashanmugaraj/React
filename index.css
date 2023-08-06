@@ -19,6 +19,7 @@
 .nav-items > ul > li {
   padding: 10px;
   margin: 20px;
+ 
 }
 
 .resto-card {
@@ -51,5 +52,24 @@ html,body{
 }
 .filter{
   padding:5px;
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shimmer-cards{
+  height: 400px;
+  width: 220px;
+  margin: 10px;
+  background-color: lightgray;
+}
+
+.shimmer-containers{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.login{
+  padding: 0 20px;
   cursor: pointer;
 }

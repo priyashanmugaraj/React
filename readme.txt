@@ -55,3 +55,30 @@ optional chaining
 -------------------
   if anyone can access object property or function is undefined finally its evaluates to undefined 
   it does not throw error using optional chaining.
+
+  How to create a child route
+  ----------------------------
+  1] first We need to install react library  which is react router dom
+  2] second we need to import createBrowserRouter function in app/main component
+  3] using that fn we can provide defination for our child route for corresponding path what should i render it.
+  4] nest i want to provide this configuation for that i will use RouterProvider component that will imported from
+  react router dom.
+  5] using that i can  able to render different child route based on different path.
+
+  Error handling
+  ---------------
+    For that we can use a error react hook that is useRouteError imported from react route dom
+    using that hook we can specify the detailed information about that error  based on that different path
+  
+  2 types of Routing
+  ------------------
+  1] Client Side Routing --> without refreshing the page we can able to render different component in single page.
+  2] Server Side Routing --> We cand make the api call to get that page and render the whole page.
+
+  How to link to different page in react
+  -----------------------------------------
+  using Link component that can be imported from react route dom
+  using that we can move to differnt component without refreshing the whole page based on the path for that
+  we will be using outlet component that also imported from react route dom
+
+

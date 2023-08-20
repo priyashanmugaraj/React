@@ -26,6 +26,7 @@
   margin: 5px;
   padding: 5px;
   width: 370px;
+  height: 670px;
   background-color: lightgray;
   white-space: normal;
 }
@@ -72,4 +73,10 @@ html,body{
 .login{
   padding: 0 20px;
   cursor: pointer;
+}
+
+.User-Card{
+  padding: 10px;
+  border: 1px solid black;
+  width: 420px;
 }

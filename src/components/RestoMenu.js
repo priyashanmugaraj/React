@@ -35,7 +35,7 @@ const RestoMenu = () => {
       <h2>{items?.costForTwoMessage}</h2>
       <h2>Menu</h2>
       <ul>
-        {menuItemsList.map((items) => (
+        {menuItemsList?.map((items) => (
           <li key={items.card.info.id}>
             {items?.card?.info?.name + "   "}- {"Rs"}
             {items?.card?.info?.price / 100}

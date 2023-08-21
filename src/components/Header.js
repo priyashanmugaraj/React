@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { LOGO_URL } from "../utils/constant";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 const HeaderComponent = () => {
   const [btnName, SetBtnName] = useState("login");
+  const onlineStatus = useOnlineStatus();
   useEffect(() => {
     console.log("Header Is Rendered.....");
   }, []);
@@ -13,6 +15,7 @@ const HeaderComponent = () => {
       </div>
       <div className="nav-items">
         <ul>
+          <li>OnlineStatus:{onlineStatus ? "✅" : "🔴"}</li>
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -21,6 +24,9 @@ const HeaderComponent = () => {
           </li>
           <li>
             <Link to="/Contact">Contact Us</Link>
+          </li>
+          <li>
+            <Link to="/Grocery">Grocery</Link>
           </li>
           <li>Cart</li>
           <button

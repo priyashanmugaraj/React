@@ -2,11 +2,13 @@ import RestoCards from "./RestoCards";
 import { useEffect, useState } from "react";
 import SimmerComponent from "./shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const BodyComponent = () => {
   const [resList, setResList] = useState([]);
   const [filteredResList, setFilteredResList] = useState([]);
   const [searchText, SetsearchText] = useState("");
+  const onlineStatus = useOnlineStatus();
 
   const fetchData = async () => {
     let data = await fetch(
@@ -28,7 +30,9 @@ const BodyComponent = () => {
     fetchData();
   }, []);
 
-  console.log("Body Is Rendered..........");
+  if (onlineStatus == false) {
+    return <h1>Could you Please Check Your Internet Connections..........</h1>;
+  }
 
   if (resList.length == 0) {
     return <SimmerComponent></SimmerComponent>;

@@ -1,29 +1,29 @@
 import { useEffect, useState } from "react";
 import SimmerComponent from "./shimmer";
 import { useParams } from "react-router-dom";
-import { menuItems_URL } from "../utils/constant";
+import useRestoMenu from "../utils/useRestoMenu";
 
 const RestoMenu = () => {
-  const [resMenu, SetresMenu] = useState(null);
   const { id } = useParams();
   console.log(id);
+  const resMenu = useRestoMenu(id);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
-  const fetchData = async () => {
-    let restoMenu = await fetch(menuItems_URL + "restaurantId=" + id);
-    let menuItems = await restoMenu.json();
-    console.log(menuItems);
-    SetresMenu(menuItems);
-  };
+  // const fetchData = async () => {
+  //   let restoMenu = await fetch(menuItems_URL + "restaurantId=" + id);
+  //   let menuItems = await restoMenu.json();
+  //   console.log(menuItems);
+  //   SetresMenu(menuItems);
+  // };
 
   const items = resMenu?.data?.cards[0]?.card?.card?.info;
   const menuItemsList =
     resMenu?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card
       ?.card?.itemCards;
-  console.log(menuItemsList);
+
   if (resMenu == null) {
     return <SimmerComponent></SimmerComponent>;
   }

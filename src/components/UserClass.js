@@ -20,11 +20,11 @@ class Userclass extends React.Component {
     console.log(name + " Child Render Is Called...");
 
     return (
-      <div className="User-Card">
-        <img src={avatar_url}></img>
-        <h1>Name:{name}</h1>
-        <h1>Locations:{location}</h1>
-        <h1>Contact:{"priya@gmail.com"}</h1>
+      <div className="p-2 m-2 border-2 max-w-md border-black">
+        <img className=" py-2" src={avatar_url}></img>
+        <h1 className="text-2xl">Name:{name}</h1>
+        <h1 className="text-2xl">Locations:{location}</h1>
+        <h1 className="text-2xl">Contact:{"priya@gmail.com"}</h1>
       </div>
     );
   }

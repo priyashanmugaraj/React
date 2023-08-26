@@ -39,18 +39,19 @@ const BodyComponent = () => {
   }
 
   return (
-    <div className="body">
-      <div className="filter">
+    <div className=" m-1 py-4 ">
+      <div className="flex items-center">
         <input
           type="text"
-          className="search"
+          className=" border border-solid to-black"
           value={searchText}
           onChange={(e) => {
             SetsearchText(e.target.value);
           }}
         ></input>
+
         <button
-          className="search-filter"
+          className="px-2 m-1 bg-green-300 rounded-md"
           onClick={() => {
             let filterRes = resList.filter((res) =>
               res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -60,19 +61,21 @@ const BodyComponent = () => {
         >
           Search
         </button>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            const filteredRestaurant = resList.filter(
-              (filteredRes) => filteredRes.info.avgRating > 4
-            );
-            setResList(filteredRestaurant);
-          }}
-        >
-          Top Rated Restaurants
-        </button>
+        <div>
+          <button
+            className="px-2 m-1 bg-blue-300 rounded-md"
+            onClick={() => {
+              const filteredRestaurant = resList.filter(
+                (filteredRes) => filteredRes.info.avgRating > 4
+              );
+              setFilteredResList(filteredRestaurant);
+            }}
+          >
+            Top Rated Restaurants
+          </button>
+        </div>
       </div>
-      <div className="resto-containers">
+      <div className=" py-3 flex flex-wrap">
         {filteredResList.map((res_info) => (
           <Link to={"restaurants/" + res_info.info.id} key={res_info.info.id}>
             <RestoCards resData={res_info}></RestoCards>

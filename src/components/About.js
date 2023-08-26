@@ -39,9 +39,7 @@ class About extends Component {
     console.log("Parent Render Is Called...");
     const { login, location, avatar_url } = this.state.userInfo;
     return (
-      <div>
-        <h1>About</h1>
-        <h2>Learning React</h2>
+      <div >
         <Userclass
           name={login}
           location={location}

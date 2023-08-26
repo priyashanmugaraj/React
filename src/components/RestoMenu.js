@@ -29,11 +29,11 @@ const RestoMenu = () => {
   }
 
   return (
-    <div className="Menu">
-      <h1>{items?.name}</h1>
-      <h2>{items?.cuisines.join(",")}</h2>
-      <h2>{items?.costForTwoMessage}</h2>
-      <h2>Menu</h2>
+    <div className="p-2 m-2 border-4 max-w-2xl border-black">
+      <h1 className=" text-3xl">{items?.name}</h1>
+      <h2 className=" text-xl">{items?.cuisines.join(",")}</h2>
+      <h2 className=" text-lg">{items?.costForTwoMessage}</h2>
+      <h2 className=" text-lg">Menu</h2>
       <ul>
         {menuItemsList?.map((items) => (
           <li key={items.card.info.id}>
